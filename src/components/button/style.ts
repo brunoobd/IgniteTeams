@@ -1,14 +1,7 @@
 import { TouchableOpacity } from "react-native";
 import styled, { css } from "styled-components/native";
 
-export enum ButtonTypeStyleEnum {
-  PRIMARY = "PRIMARY",
-  SECONDARY = "SECONDARY",
-}
-
-export type ButtonTypeStyleProps =
-  | ButtonTypeStyleEnum.PRIMARY
-  | ButtonTypeStyleEnum.SECONDARY;
+export type ButtonTypeStyleProps = "PRIMARY" | "SECONDARY";
 
 type Props = {
   variant: ButtonTypeStyleProps;
@@ -23,9 +16,7 @@ export const Container = styled(TouchableOpacity)<Props>`
   align-items: center;
 
   background-color: ${({ theme, variant }) =>
-    variant === ButtonTypeStyleEnum.PRIMARY
-      ? theme.COLORS.GREEN_700
-      : theme.COLORS.RED_DARK};
+    variant === "PRIMARY" ? theme.COLORS.GREEN_700 : theme.COLORS.RED_DARK};
 
   border-radius: 6px;
 `;

@@ -1,10 +1,5 @@
 import { TouchableOpacityProps } from "react-native";
-import {
-  ButtonTypeStyleEnum,
-  ButtonTypeStyleProps,
-  Container,
-  Title,
-} from "./style";
+import { ButtonTypeStyleProps, Container, Title } from "./style";
 
 type Props = TouchableOpacityProps & {
   title: string;
@@ -13,7 +8,7 @@ type Props = TouchableOpacityProps & {
 
 export const Button = ({
   title,
-  variant = ButtonTypeStyleEnum.PRIMARY,
+  variant = 'PRIMARY',
   ...props
 }: Props) => {
   return (

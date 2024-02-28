@@ -7,6 +7,7 @@ import {
   useFonts,
 } from "@expo-google-fonts/roboto";
 import { ActivityIndicator, StatusBar } from "react-native";
+import { Players } from "@screens/players";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -18,7 +19,7 @@ export default function App() {
         backgroundColor={"transparent"}
         translucent
       />
-      {fontsLoaded ? <NewGroup /> : <ActivityIndicator />}
+      {fontsLoaded ? <Players /> : <ActivityIndicator />}
     </ThemeProvider>
   );
 }
