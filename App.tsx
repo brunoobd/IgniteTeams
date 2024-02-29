@@ -1,5 +1,4 @@
 import { ThemeProvider } from "styled-components/native";
-import { NewGroup } from "./src/screens/new-group";
 import theme from "src/theme";
 import {
   Roboto_400Regular,
@@ -7,7 +6,7 @@ import {
   useFonts,
 } from "@expo-google-fonts/roboto";
 import { ActivityIndicator, StatusBar } from "react-native";
-import { Players } from "@screens/players";
+import { Routes } from "src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -19,7 +18,7 @@ export default function App() {
         backgroundColor={"transparent"}
         translucent
       />
-      {fontsLoaded ? <Players /> : <ActivityIndicator />}
+      {fontsLoaded ? <Routes /> : <ActivityIndicator />}
     </ThemeProvider>
   );
 }
