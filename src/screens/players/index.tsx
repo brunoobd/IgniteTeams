@@ -10,19 +10,23 @@ import { Counter, HeaderList } from "@components/filter/style";
 import { PlayerCard } from "@components/player-card";
 import { ListEmpty } from "@components/list-empty";
 import { Button } from "@components/button";
+import { useRoute } from "@react-navigation/native";
+
+type RouteParams = {
+  group: string;
+};
 
 export const Players = () => {
   const [team, setTeam] = useState("Time A");
   const [players, setPlayers] = useState(["Bruno"]);
 
+  const { group } = useRoute().params as RouteParams;
+
   return (
     <Container>
       <Header showBackButton />
 
-      <Highlight
-        title={"Nome da turma"}
-        subtitle={"acione a galera e separe os times"}
-      />
+      <Highlight title={group} subtitle={"acione a galera e separe os times"} />
 
       <Form>
         <Input placeholder={"Nome da pessoa"} autoCorrect={false} />

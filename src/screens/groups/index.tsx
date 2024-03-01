@@ -7,15 +7,21 @@ import { useState } from "react";
 import { Group } from "src/model";
 import { ListEmpty } from "@components/list-empty";
 import { Button } from "@components/button";
+import { useNavigation } from "@react-navigation/native";
 
 export const Groups = () => {
   const [groups, setGroups] = useState(Array<Group>);
+  const navigation = useNavigation();
 
   const renderItem = ({ item }: { item: Group }) => {
     return <GroupCard name={item.name} />;
   };
 
   const keyExtractor = ({ id }: Group) => `${id}`;
+
+  const handleNewGroup = () => {
+    navigation.navigate('new');
+  }
 
   return (
     <Container>
@@ -31,7 +37,7 @@ export const Groups = () => {
           <ListEmpty message={"Que tal cadastrar a primeira turma?"} />
         }
       />
-      <Button title={'Criar nova turma'} />
+      <Button title={'Criar nova turma'} onPress={handleNewGroup} />
     </Container>
   );
 };

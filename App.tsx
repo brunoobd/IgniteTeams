@@ -7,6 +7,8 @@ import {
 } from "@expo-google-fonts/roboto";
 import { ActivityIndicator, StatusBar } from "react-native";
 import { Routes } from "src/routes";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Loading } from "@components/loading";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -18,7 +20,7 @@ export default function App() {
         backgroundColor={"transparent"}
         translucent
       />
-      {fontsLoaded ? <Routes /> : <ActivityIndicator />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </ThemeProvider>
   );
 }
