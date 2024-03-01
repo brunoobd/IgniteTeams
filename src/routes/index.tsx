@@ -1,11 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { AppRoutes } from "./app.routes";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useTheme } from "styled-components/native";
+import { View } from "react-native";
 
 export const Routes = () => {
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
         backgroundColor: useTheme().COLORS.GRAY_600,
@@ -14,6 +14,6 @@ export const Routes = () => {
       <NavigationContainer>
         <AppRoutes />
       </NavigationContainer>
-    </SafeAreaView>
+    </View>
   );
 };

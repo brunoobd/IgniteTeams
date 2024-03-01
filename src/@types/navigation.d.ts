@@ -4,8 +4,8 @@ export declare global {
       groups: undefined;
       new: undefined;
       players: {
-        group: string;
-      }
+        groupId: number;
+      };
     }
   }
 }
